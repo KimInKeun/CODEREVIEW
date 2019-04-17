@@ -1,5 +1,7 @@
+#include "shopping.h"
+
 #include <iostream>
-#include "./shopping.h"
+
 
 // Push Goods object to shopping_list_ vector
 void Shopping::PushList(Goods object) {
@@ -26,7 +28,7 @@ void Shopping::SortByPrice() {
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end()-1; i++) {
+      i != shopping_list_.end()-1; ++i) {
     for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
       if (min == shopping_list_.end()) {
         min = j;
@@ -47,7 +49,7 @@ void Shopping::SortByIndex() {
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end()-1; i++) {
+      i != shopping_list_.end()-1; ++i) {
     for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
       if (min == shopping_list_.end()) {
         min = j;
